@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hanuvem/otp.dart';
 import 'onboarding_screen.dart'; // Make sure to import your onboarding screen file
 
 void main() {
@@ -10,10 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'QR Scanner App',
+      routes: {
+        '/': (context) => OnboardingScreen(),
+        '/otp': (context) => OtpPage(),
+      },
       theme: _lightTheme,
       darkTheme: _darkTheme,
       themeMode: ThemeMode.system, // Automatically switch between light and dark themes based on system settings
-      home: OnboardingScreen(),
     );
   }
 

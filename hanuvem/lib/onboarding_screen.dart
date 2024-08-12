@@ -73,7 +73,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text('Next'),
                   )
                       : TextButton(
-                    onPressed: _skip, // or navigate to another screen
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/otp');
+                    }, // or navigate to another screen
                     child: Text('Get Started'),
                   ),
                 ],
