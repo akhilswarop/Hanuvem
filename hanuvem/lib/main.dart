@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hanuvem/otp.dart';
-import 'onboarding_screen.dart'; // Make sure to import your onboarding screen file
+import 'onboarding_screen.dart';
+import 'qrscanner.dart';// Make sure to import your onboarding screen file
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => OnboardingScreen(),
         '/otp': (context) => OtpPage(),
+        '/qr': (context) => QRScannerPage(),
+
       },
       theme: _lightTheme,
       darkTheme: _darkTheme,

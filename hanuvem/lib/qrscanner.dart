@@ -29,10 +29,30 @@ class _QRScannerPageState extends State<QRScannerPage> {
       appBar: AppBar(
         title: Text('QR Scanner'),
       ),
-      body: QRView(
-        key: qrKey,
-        onQRViewCreated: _onQRViewCreated,
-      ),
+      body: Stack(children: [
+
+        QRView(
+          key: qrKey,
+          onQRViewCreated: _onQRViewCreated,
+          overlay: QrScannerOverlayShape(
+            borderColor: Colors.blue,
+            borderWidth: 10.0,
+            overlayColor: const Color.fromRGBO(0, 0, 0, 50),
+            borderRadius: 5,
+            borderLength: 20,
+          ),
+        ),
+        Positioned(
+            bottom: 50, // Adjust the position
+            left: 0,
+            right: 0,
+            child: Center(
+                child: Text('Align the QR code within the frame to scan',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ))))
+      ]),
     );
   }
 
